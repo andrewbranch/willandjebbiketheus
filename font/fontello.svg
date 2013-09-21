@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2012 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="heart" unicode="&#xe801;" d="M500-79q-15 0-25 10l-348 336q-6 4-15 15t-31 37-38 54-30 68-13 77q0 123 71 192t196 69q35 0 71-12t67-32 53-38 42-38q20 20 42 38t53 38 67 32 71 12q125 0 196-69t71-192q0-123-128-251l-348-335q-10-10-25-10z" horiz-adv-x="1000" />
+<glyph glyph-name="location" unicode="&#xe800;" d="M0 473q0 156 110 267t267 110 267-110 110-267q0-123-53-193l-324-430-324 430q-53 70-53 193z m219 0q0-66 46-112t112-46 112 46 46 112-46 112-112 46-112-46-46-112z" horiz-adv-x="754" />
+<glyph glyph-name="twitter" unicode="&#xe802;" d="M904 622q-37-55-90-93 1-8 1-23 0-73-21-145t-64-139-103-117-144-81-180-30q-151 0-277 81 20-2 44-2 126 0 224 77-59 1-105 36t-64 89q18-3 34-3 24 0 47 6-62 13-104 62t-41 115l0 2q38-21 81-23-37 25-59 64t-22 86q0 49 25 91 68-83 164-133t207-56q-4 21-4 41 0 75 53 128t128 53q78 0 132-57 61 12 114 44-21-64-79-99 52 6 104 28z" horiz-adv-x="928.571" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Will and Jeb Bike the U.S.</title>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
+	<link href="css/fontello.css" rel="stylesheet"/>
+	<link href='http://fonts.googleapis.com/css?family=Della+Respira|Zeyada' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic' rel='stylesheet' type='text/css'>
+	<style>
+		html, body { height: 100%; font-size: 16px; font-family: 'Roboto', 'Helvetica', arial, sans-serif; font-weight: 300; }
+		.container-fluid { min-height: 100%; margin-top: -252px; padding-top: 252px; box-sizing: border-box; padding-bottom: 120px; text-align: center; }
+		.footer { min-height: 100px; background-color: #333; color: white; text-align: center; padding: 30px; margin-top: -100px; box-sizing: border-box; }
+		a:hover { text-decoration: none; }
+		.hero-unit { background-color: #333; color: white; border-radius: 0; height: 102px; }
+		.hero-unit p { font-size: 34px; font-family: 'Zeyada'; }
+		.hero-unit h1 { color: #e9b642; font-family: 'Della Respira'; }
+		.hero-unit a { color: white; font-size: 40px; font-family: 'Zeyada'; margin-top: 64px; }
+		.hero-unit a:hover i { visibility: visible; }
+		.hero-unit a i { color: #e9b642; font-size: 32px; visibility: hidden; }
+		.hero-unit > div { display: inline-block; }
+		.wheel { width: 300px; height: 300px; border: 9px solid white; border-radius: 165px; position: relative; }
+		.wheel .spoke { width: 300px; height: 0px; border: 2px solid white; position: absolute; top: 150px; background-color: white; }
+		.wheel.black { border-color: #333; }
+		.wheel.black .spoke { border-color: #ddd; background-color: #ddd; }
+		.spoke:nth-child(2) { -webkit-transform: rotate(36deg); transform: rotate(36deg); }
+		.spoke:nth-child(3) { -webkit-transform: rotate(72deg); transform: rotate(72deg); }
+		.spoke:nth-child(4) { -webkit-transform: rotate(108deg); transform: rotate(108deg); }
+		.spoke:nth-child(5) { -webkit-transform: rotate(144deg); transform: rotate(144deg); }
+		.bicolor-wheel .wheel { overflow: hidden; }
+		.bicolor-wheel .wheel:first-child { border-radius: 165px 165px 0 0; height: 150px; z-index: 1; border-bottom-width: 0; display: none; }
+		.bicolor-wheel .wheel:last-child { border-radius: 0 0 165px 165px; height: 150px; border-top-width: 0; }
+		.bicolor-wheel .wheel:last-child .spoke { top: -4px; }
+		#wheel { margin: -30px 0 0 -125px; float: left; }
+		.nav { margin-top: -25px; display: inline-block; margin-bottom: 40px; }
+		.nav li { display: inline-block; -webkit-box-flex: 1; -moz-box-flex: 1; -o-box-flex: 1; -ms-box-flex: 1; box-flex: 1; padding: 1em; }
+		.nav li a { color: #999; font-size: 24px; }
+		.nav li a:hover { color: #e9b642; background-color: transparent; }
+		.content {
+			display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+			-webkit-box-pack: center; -moz-box-pack: center; -o-box-pack: center; -ms-flex-pack: center; box-pack: center;
+		}
+		.content div { text-align: left; }
+		.content > div:first-child { -webkit-box-flex: 1; -moz-box-flex: 1; width: 33.333%; -webkit-flex: 1; ms-flex: 1; flex: 1; }
+		.content > div:last-child { -webkit-box-flex: 2; -moz-box-flex: 2; width: 66.667%; -webkit-flex: 2; ms-flex: 2; flex: 2; }
+		.thumbnail { float: right; box-shadow: #999 4px 4px 8px; border-radius: 0; }
+		
+		@media all and (min-width: 1100px) {
+			.container-fluid { width: 900px; margin: auto; margin-top: -252px; }
+		}
+		#wherearewe { text-align: left; margin: 40px 0; }
+		#map { border: 3px solid #333; }
+		.tweet { font-size: 18px; margin-top: 1em; }
+		.tweet .caption { color: #999; font-size: 12px; margin-top: -10px; }
+		.icon-twitter { color: #4099ff; }
+	</style>
+</head>
+<body>
+	<div class="hero-unit">
+		<div>
+			<p>Will and Jeb</p>
+			<h1>Bike the U.S.</h1>
+		</div>
+		<a href="#" class="pull-right">Donate <i class="icon-heart"></i></a>
+	</div>
+	<div class="bicolor-wheel" id="wheel">
+		<div class="wheel">
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+		</div>
+		<div class="black wheel">
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+			<div class="spoke"></div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<ul class="nav">
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Sponsorship</a></li>
+			<li><a href="#">Preparation</a></li>
+			<li><a href="#">Touring</a></li>
+		</ul>
+		<div class="content">
+			<div class="box">
+				<p>Welcome to the website of Will Bulla and Jeb Hunt's Fall 2013 cycling adventure across the US of A! This website will be your resource to learn up-to-date information about this exciting 4,200 mile journey across the USA on the TransAmerica trail. We will update the blog daily before and during the trip, so be sure to visit often. We hope you enjoy!</p>
+				<div class="tweet">
+					<p><i class="icon-twitter"></i><a href="#">@jebsusername</a> getting geared up for riding a bicycle a long way! <a href="#">#nopunintended</a> <a href="#">#biking</a></p>
+					<p class="caption">7/1/2013</p>
+				</div>
+				<div class="tweet">
+					<p><i class="icon-twitter"></i><a href="#">@willsusername</a> this is gonna be totes fun <a href="#">#biking</a></p>
+					<p class="caption">7/1/2013</p>
+				</div>
+				<div class="tweet">
+					<p>See more on our <a href="#">Twitter</a></p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="thumbnail">
+					<img src="images/sample_img.jpg" width="500" height="500"/>
+					<div class="caption">
+						<h3><a href="#">@jebsusername</a> 7/1/2013</h3>
+						<p>instagram caption <a href="#">#hashtags</a> <a href="#">#bicycles</a> <a href="#">@will</a> looks so cool here</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="wherearewe">
+			<div><h3>Where are we?</h2></div>
+			<div id="map"><iframe width="854" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=portland+or&amp;aq=&amp;sll=32.52,-85.48&amp;sspn=0.01196,0.022724&amp;ie=UTF8&amp;hq=&amp;hnear=Portland,+Multnomah,+Oregon&amp;t=m&amp;ll=45.584731,-122.664413&amp;spn=0.168193,0.593262&amp;z=11&amp;iwloc=A&amp;output=embed"></iframe></div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&copy; Jeb Hunt <script>document.write(new Date().getYear())</script></p>
+	</div>
+</body>
+</html>
