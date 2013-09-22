@@ -3,7 +3,6 @@
 <head>
 	<title>Will and Jeb Bike the U.S.</title>
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-	<link href="css/fontello.css" rel="stylesheet"/>
 	<link href="http://fonts.googleapis.com/css?family=Lato:100,200,300|Zeyada" rel="stylesheet" type="text/css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js"></script>
@@ -63,7 +62,7 @@
 	
 		#hero {
 			height: 500px;
-			background: url(images/hero3.jpg);
+			background: url(images/hero3_xs.jpg);
 			background-size: cover;
 			background-position-y: 0;
 		}
@@ -140,13 +139,13 @@
 		#image2 {
 			position: relative;
 			z-index: -1;
-			height: 300px;
-			background: url(images/hero1.jpg);
+			height: 225px;
+			background: url(images/hero1_xs.jpg);
 			background-size: cover;
 		}
 		
 		#image3 {
-			background: url(images/hero4.jpg);
+			background: url(images/hero4_xs.jpg);
 			background-size: cover;
 			height: 500px;
 			padding-top: 350px;
@@ -166,6 +165,10 @@
 			width: 100px;
 		}
 		
+		#bio h3 {
+			margin-top: 0;
+		}
+		
 		@media (max-width: 767px) {
 			
 			body {
@@ -175,16 +178,80 @@
 			h1 {
 				font-size: 48px;
 			}
+			
+			#bio h3 {
+				margin-top: 20px;
+			}
+		}
+		
+		@media (min-width: 480px) {
+			#hero {
+				background-image: url('images/hero3_sm.jpg');
+			}
+			#image2 {
+				background-image: url('images/hero1_sm.jpg');
+				height: 250px;
+			}
+			#image3 {
+				background-image: url('images/hero4_sm.jpg');
+			}
+		}
+		
+		@media (min-width: 768px) {
+			#hero {
+				background-image: url('images/hero3_md.jpg');
+			}
+			#image2 {
+				background-image: url('images/hero1_md.jpg');
+				height: 275px;
+			}
+			#image3 {
+				background-image: url('images/hero4_md.jpg');
+			}
+		}
+		
+		@media (min-width: 1168px) {
+			#hero {
+				background-image: url('images/hero3.jpg');
+			}
+			#image2 {
+				background-image: url('images/hero1.jpg');
+				height: 300px;
+			}
+			#image3 {
+				background-image: url('images/hero4.jpg');
+			}
 		}
 		
 	</style>
 	<script>
 	
-	window.onload = function() {
-	
-		var s = skrollr.init();
+	function calculateParallax() {
+		var offset;
+		if (document.width > 1167) {
+			offset = - document.width % 1167;
+		} else if (document.width > 767) {
+			offset = - document.width % 767;
+		} else if (document.width > 479) {
+			offset = - document.width % 479;
+		}
 		
+		if (!isNaN(offset) && offset !== undefined) {
+			image2.setAttribute("data-bottom-top", image2.getAttribute("data-bottom-top").replace(/(-)?[0-9]+(\.[0-9]+)?/, offset));
+			image2.setAttribute("data-top-bottom", image2.getAttribute("data-top-bottom").replace(/(-)?[0-9]+(\.[0-9]+)?/, -100 + offset));
+		}
+	}
+	
+	window.onload = function() {
+		window.image2 = document.getElementById("image2");
+		calculateParallax();
+		window.s = skrollr.init();
 	};
+	
+	window.onresize = function() {
+		calculateParallax();
+		s.refresh()
+	}
 	
 	</script>
 </head>
@@ -200,52 +267,52 @@
 	<div class="shadow row section" id="about-us">
 		<div class="container center-block">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<h2>Who we are</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>But that is up to little Larry here. Isn't it, Larry? At dignissim magna ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus. No, look. I do mind. The Dude minds. This will not stand, you know, this aggression will not stand, man. Curabitur eu mi sapien, ut. No, the, uh, police chief of Malibu. A real reactionary. Ultricies ipsum morbi eget risus nulla nullam vel nisi.</p>
 				</div>
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<h2><span class="orange" id="countdown">82</span> days</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Wonderful woman. Very free-spirited. We're all very fond of her. Enim, vel auctor ante morbi id urna vel felis lacinia. Ever hear of the Seattle Seven? Placerat vestibulum turpis nulla, viverra nec volutpat ac. Little Lebowski Urban Achievers, yes, and proud we are of all of them. Ornare id lectus cras pharetra faucibus tristique nullam. The nail polish, Walter.</p>
 				</div>
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<h2>Help us</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Can we just rent it from you? Dolor sit amet, consectetur adipiscing elit praesent ac magna justo. They're nihilists. Pellentesque ac lectus quis elit blandit fringilla a ut turpis. Yeah. Roadie for Metallica. Speed of Sound Tour. Praesent felis ligula, malesuada suscipit malesuada non, ultrices non. Walter, you can't do that. These guys're like me, they're pacifists. Smokey was a conscientious objector.</p>
 				</div>
 			</div>
 			<!-- <div class="row">
-				<div class="center section col-md-12">
+				<div class="center section col-sm-12">
 					<a href="#" id="donate">Donate<i class="icon-heart"></i></a>
 				</div>
 			</div> -->
 		</div>
 	</div>
-	<div id="image2" class="row" data-bottom-top="background-position-y:-270px" data-top-bottom="background-position-y:-320px">
+	<div id="image2" class="row" data-bottom-top="background-position-y:0px" data-top-bottom="background-position-y:0px">
 	</div>
-	<div class="shadow section row" id="content2">
+	<div class="shadow section row" id="bio">
 		<div class="container center-block">
 			<div class="row space-above">
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<img class="img-responsive img-thumbnail" src="images/jeb.jpg"/>
 				</div>
-				<div class="col-md-8">
+				<div class="col-sm-8">
 					<h3 class="orange">Jeb Hunt</h3>
 					<p>Jeb Hunt, 31, is an avid cyclist and is currently working on his Masters Degree at Duke Divinity School. He is a graduate of the University of West Florida, with a degree in Communicatin Arts. He enjoys technology (especially Apple) and works as the Communications and Contemporary Worship Arts Director at First United Methodist Church of Pensacola. Jeb has competed in multiple marathons, half-marathons and triathlons and has traveled to more than 24 countries. He looks forward to the adventure of traveling across the USA and meeting new people and places.</p>
 				</div>
 			</div>
 			<div class="row space-above">
-				<div class="col-md-8">
+				<div class="col-sm-8">
 					<h3 class="orange">Will Bulla</h3>
 					<p>Will Bulla, 21, is an avid cyclist and student at Pensacola State College with a major in Computer Systems Information. Will enjoys technology (especially Android) and works at KMS Telecommunications in Pensacola, Florida. Will is also a talented drummer with the local band BANNER. In preparation for the upcoming journey across America, Will has competed in the Gulf Coast Interstate Relay, the first officially sanctioned USA Cycling bicycle relay, and is currently training for a triathlon.</p>
 				</div>
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<img class="img-responsive img-thumbnail" src="images/will.jpg"/>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="image3" class="row" data-bottom-top="background-position-y:-80px" data-end="background-position-y:-130px">
-		<div id="footer" class="col-md-12 center">
+		<div id="footer" class="col-sm-12 center">
 			<p style="margin-bottom: -20px; margin-top: 10px">Copyright Jeb Hunt 2013. Design by Andrew Branch. All rights reserved.</p>
 			<div class="inline-block center">
 				<h4><a href="#">facebook</a></h4>
