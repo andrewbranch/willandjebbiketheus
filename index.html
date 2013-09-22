@@ -2,36 +2,11 @@
 <html>
 <head>
 	<title>Will and Jeb Bike the U.S.</title>
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="css/fontello.css" rel="stylesheet"/>
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300|Zeyada' rel='stylesheet' type='text/css'>
-	
-	<script>
-		
-		var image1;
-		var image2;
-		var image3;
-		window.onload = function() {
-			var departureDate = Date.parse("September 3 2013 12:00 AM");
-			var now = new Date();
-			now.setHours(0);
-			now.setMinutes(0);
-			now.setSeconds(0);
-			now.setMilliseconds(0);
-			var days = (departureDate - now) / 86400000;
-			document.getElementById("countdown").innerHTML = days;
-			image1 = document.getElementById("hero");
-			image2 = document.getElementById("image2");
-			image3 = document.getElementById("image3");
-		};
-		
-		window.onscroll = function() {
-			image1.style.backgroundPositionY = (window.pageYOffset / 5).toString() + 'px';
-			image2.style.backgroundPositionY = ((window.pageYOffset - image2.offsetTop - 700)  / 5).toString() + 'px';
-			image3.style.backgroundPositionY = ((window.pageYOffset - image3.offsetTop - 300)  / 5).toString() + 'px';
-		}
-	</script>
-	
+	<link href="http://fonts.googleapis.com/css?family=Lato:100,200,300|Zeyada" rel="stylesheet" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js"></script>
 	<style>
 	
 		body {
@@ -40,24 +15,23 @@
 			font-size: 16px;
 			background-color: #f5f5f5;
 			color: #555;
+			margin: 0;
 		}
 		
-		.container-fluid {
-			padding: 0;
-		}
-		
-		.row-fluid {
+		.row {
 			margin-left: 0;
 		}
 		
 		h1, h2, h3, h4, h5, h6 {
 			font-weight: 200;
+			font-family: Lato, sans-serif;
 		}
 		
 		a {
 			color: #f07d31;
 			-webkit-transition: color .5s;
 			transition: color .5s;
+			text-decoration: none;
 		}
 		
 		a:hover {
@@ -116,8 +90,12 @@
 			box-shadow: black 0px 0px 25px;
 		}
 		
-		#about-us .container-fluid, #content2 .container-fluid {
+		.container {
 			max-width: 900px;
+		}
+		
+		.space-above {
+			margin-top: 2em;
 		}
 		
 		.inline-block {
@@ -200,65 +178,80 @@
 		}
 		
 	</style>
+	<script>
+	
+	window.onload = function() {
+	
+		var s = skrollr.init();
+		
+	};
+	
+	</script>
 </head>
 <body>
-	<div class="container-fluid">
-		<div id="hero" class="row row-fluid">
-			<div class="span12">
-				<div id="title" class="shadow" style="padding-left: 15%">
-					<h1><span class="orange">Will</span> and <span class="orange">Jeb</span></h1>
-					<h2>Bike the U.S.</h2>
+	<div id="hero" class="row" data-top="background-position-y:0px" data-top-bottom="background-position-y:-50px">
+		<div class="shadow" id="title">
+			<div class="container">
+				<h1><span class="orange">Will</span> and <span class="orange">Jeb</span></h1>
+				<h2>Bike the U.S.</h2>
+			</div>
+		</div>
+	</div>
+	<div class="shadow row section" id="about-us">
+		<div class="container center-block">
+			<div class="row">
+				<div class="col-md-4">
+					<h2>Who we are</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="col-md-4">
+					<h2><span class="orange" id="countdown">82</span> days</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="col-md-4">
+					<h2>Help us</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="center section col-md-12">
+					<a href="#" id="donate">Donate<i class="icon-heart"></i></a>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<div id="image2" class="row" data-bottom-top="background-position-y:-270px" data-top-bottom="background-position-y:-320px">
+	</div>
+	<div class="shadow section row" id="content2">
+		<div class="container center-block">
+			<div class="row space-above">
+				<div class="col-md-4">
+					<img class="img-responsive img-thumbnail" src="images/jeb.jpg"/>
+				</div>
+				<div class="col-md-8">
+					<h3 class="orange">Jeb Hunt</h3>
+					<p>Jeb Hunt, 31, is an avid cyclist and is currently working on his Masters Degree at Duke Divinity School. He is a graduate of the University of West Florida, with a degree in Communicatin Arts. He enjoys technology (especially Apple) and works as the Communications and Contemporary Worship Arts Director at First United Methodist Church of Pensacola. Jeb has competed in multiple marathons, half-marathons and triathlons and has traveled to more than 24 countries. He looks forward to the adventure of traveling across the USA and meeting new people and places.</p>
+				</div>
+			</div>
+			<div class="row space-above">
+				<div class="col-md-8">
+					<h3 class="orange">Will Bulla</h3>
+					<p>Will Bulla, 21, is an avid cyclist and student at Pensacola State College with a major in Computer Systems Information. Will enjoys technology (especially Android) and works at KMS Telecommunications in Pensacola, Florida. Will is also a talented drummer with the local band BANNER. In preparation for the upcoming journey across America, Will has competed in the Gulf Coast Interstate Relay, the first officially sanctioned USA Cycling bicycle relay, and is currently training for a triathlon.</p>
+				</div>
+				<div class="col-md-4">
+					<img class="img-responsive img-thumbnail" src="images/will.jpg"/>
 				</div>
 			</div>
 		</div>
-		<div class="shadow row row-fluid section" id="about-us">
-			<div class="container-fluid center-block">
-				<div class="row row-fluid">
-					<div class="span4">
-						<h2>Who we are</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="span4">
-						<h2><span class="orange" id="countdown"></span> days</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="span4">
-						<h2>Help us</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-				</div>
+	</div>
+	<div id="image3" class="row" data-bottom-top="background-position-y:-80px" data-end="background-position-y:-130px">
+		<div id="footer" class="col-md-12 center">
+			<p style="margin-bottom: -20px; margin-top: 10px">Copyright Jeb Hunt 2013. Design by Andrew Branch. All rights reserved.</p>
+			<div class="inline-block center">
+				<h4><a href="#">facebook</a></h4>
 			</div>
-		</div>
-		<div id="image2" class="row row-fluid">
-		</div>
-		<div class="shadow section row row-fluid" id="content2">
-			<div class="container-fluid center-block">
-				<div class="row row-fluid">
-					<div class="center section span12">
-						<a href="#" id="donate">Donate<i class="icon-heart"></i></a>
-					</div>
-				</div>
-				<div class="row row-fluid">
-					<div class="span6">
-						<h2>Content</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="span6">
-						<h2>More content</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="image3" class="row row-fluid">
-			<div id="footer" class="span12 center">
-				<p style="margin-bottom: -20px; margin-top: 10px">Copyright Jeb Hunt 2013. Design by Andrew Branch. All rights reserved.</p>
-				<div class="inline-block center">
-					<h4><a href="#">facebook</a></h4>
-				</div>
-				<div class="inline-block center">
-					<h4><a href="#">instagram</a></h4>
-				</div>
+			<div class="inline-block center">
+				<h4><a href="#">instagram</a></h4>
 			</div>
 		</div>
 	</div>
