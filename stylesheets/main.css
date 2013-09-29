@@ -41,14 +41,17 @@ a:hover {
 	display: -ms-flexbox;
 	-ms-box-orient: horizontal;
 	display: -webkit-flex;
-	display: -moz-flex;
 	display: -ms-flex;
-	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-flex-flow: row wrap;
-	-moz-flex-flow: row wrap;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
+}
+
+@supports (flex-wrap: wrap) {
+    .flex-container {
+        display: flex;
+    }
 }
 
 .shadow {
@@ -115,10 +118,15 @@ section {
 }
 
 .bio, .portrait {
-	display: block;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	overflow: hidden;
+}
+
+@supports (flex-wrap: wrap) {
+    .bio, .portrait {
+        display: block;
+    }
 }
 
 .portrait img {
@@ -132,11 +140,13 @@ section {
 #jeb, #will {
 	-webkit-box-orient: vertical;
 	-webkit-flex-direction: column;
+    flex-direction: column;
 	margin-top: 2em;
 }
 
 #will {
 	-webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
 	flex-direction: column-reverse;
 }
 
@@ -169,19 +179,22 @@ footer {
 		font-size: 72px;
 	}
 	.bio {
+        display: inline-block;
+        vertical-align: top;
 		width: 66.66666666666%;
 		padding: 0 1em;
 	}
-	#will .bio {
-		padding-left: 0;
-	}
-	.portrait {
-		width: 33.33333333333%;
-	}
+    .portrait {
+        display: inline-block;
+        width: 33.33333333333%;
+    }
 	#jeb, #will {
 		-webkit-box-orient: horizontal;
 		-webkit-flex-flow: row wrap;
 		-webkit-box-direction: normal;
+	}
+    #will .bio {
+		padding-left: 0;
 	}
 	#bios h3 {
 		margin-top: 0;
