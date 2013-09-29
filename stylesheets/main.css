@@ -137,7 +137,7 @@ section {
 
 #will {
 	-webkit-box-direction: reverse;
-	flex-wrap: wrap-reverse;
+	flex-direction: column-reverse;
 }
 
 footer {
@@ -180,7 +180,7 @@ footer {
 	}
 	#jeb, #will {
 		-webkit-box-orient: horizontal;
-		-webkit-flex-direction: row wrap;
+		-webkit-flex-flow: row wrap;
 		-webkit-box-direction: normal;
 	}
 	#bios h3 {
